@@ -1,0 +1,11 @@
+<div class="search-wrapper">
+    <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()" novalidate>
+        <a class="logo" href="/">
+            <img src="assets/img/logo-pequeno.png" alt="logo">
+        </a>
+        <input class="search-input form-input" type="text" name="search" formControlName="search">
+        <button class="search-form-btn" type="submit" [disabled]="!this.searchForm.valid">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </form>
+</div>
