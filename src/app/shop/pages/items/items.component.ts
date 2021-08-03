@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ShopStoreService } from '../../services/shop-store.service';
 
 @Component({
   selector: 'app-items',
@@ -10,7 +11,9 @@ export class ItemsComponent implements OnInit {
 
   search!: string;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private readonly shopStoreService: ShopStoreService) {
     this.route.queryParams.subscribe(params => {
       this.search = params.search;
     });
@@ -18,7 +21,9 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.search);
-
   }
 
+  onSearch(search: string) {
+    this.shopStoreService.navigateToItem(search);
+  }
 }

@@ -1,7 +1,7 @@
 import { EventEmitter, OnInit } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GLOBAL } from 'src/app/shop/constans/global';
 
 @Component({

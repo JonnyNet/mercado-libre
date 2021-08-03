@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Store } from 'src/app/shared/store/store';
-import { GLOBAL } from '../constans/global';
+import { URLS } from '../constans/urls';
 import { ShopState } from '../models/shop-state';
 
 @Injectable({
@@ -8,10 +10,13 @@ import { ShopState } from '../models/shop-state';
 })
 export class ShopStoreService extends Store<ShopState>{
 
-  constructor() {
+  constructor(private router: Router) {
     super({
-      search: GLOBAL.EMPTY,
       items: [],
     });
+  }
+
+  navigateToItem(search: string) {
+    this.router.navigate([URLS.ITEM], { queryParams: { search } });
   }
 }

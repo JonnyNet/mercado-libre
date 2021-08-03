@@ -1,5 +1,8 @@
-<div class="item-wrapper">
+<div class="wrapper-items">
     <header class="header">
-        <app-search></app-search>
+        <app-search [text]="search" (onSearch)="onSearch($event)"></app-search>
     </header>
+    <main class="wrapper-page">
+        
+    </main>
 </div>
