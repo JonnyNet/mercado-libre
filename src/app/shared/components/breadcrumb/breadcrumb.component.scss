@@ -1,0 +1,14 @@
+.breadcrumb {
+    list-style: none;
+    padding: 16px 0px;
+    color: lightslategrey;
+    li {
+        display: inline-block;
+        text-transform: capitalize;
+        &:not(:first-child):before {
+            padding: 0 5px;
+            color: #ccc;
+            content: "|";
+        }
+    }
+}
